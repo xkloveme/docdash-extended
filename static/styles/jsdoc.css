@@ -171,6 +171,10 @@ tt, code, kbd, samp{
   padding: 1px 5px;
 }
 
+pre {
+  padding-bottom: 1em;
+}  
+
 .class-description {
   font-size: 130%;
   line-height: 140%;
