@@ -110,6 +110,7 @@ Docdash supports the following options:
         "private": [false|true],        // set to false to not show @private in navbar
         "removeQuotes": [none|all|trim],// Remove single and double quotes, trim removes only surrounding ones
         "scripts": [],                  // Array of external (or relative local copied using templates.default.staticFiles.include) js or css files to inject into HTML,
+        "ShortenTypes": [false|true], // If set to true this will resolve the display name of all types as the shortened name only (after the final period).
         "menu": {                       // Adding additional menu items after Home
             "Project Website": {        // Menu item name
                 "href":"https://myproject.com", //the rest of HTML properties to add to manu item
