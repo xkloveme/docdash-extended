@@ -3,7 +3,7 @@
     var self = this;
     data.forEach(function(name, i) {
     if (env && env.conf && env.conf.docdash && env.conf.docdash.shortenTypes === true) {
-        var nameArr = name.split(".");
+        var nameArr = name.split(/[\.~#]/);
         var resolvedName = nameArr[nameArr.length - 1];
     } else {
         var resolvedName = name;
