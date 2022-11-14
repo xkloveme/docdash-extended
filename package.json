@@ -1,6 +1,6 @@
 {
   "name": "docdash",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami",
   "main": "publish.js",
   "scripts": {
@@ -13,8 +13,8 @@
     "url": "https://github.com/clenemt/docdash.git"
   },
   "devDependencies": {
-    "jsdoc": "latest",
     "browser-sync": "latest",
+    "jsdoc": "latest",
     "watch-run": "latest"
   },
   "author": "Clement Moron <clement.moron@gmail.com>",
@@ -27,5 +27,8 @@
     "publish.js",
     "static",
     "tmpl"
-  ]
+  ],
+  "dependencies": {
+    "@jsdoc/salty": "^0.2.1"
+  }
 }
