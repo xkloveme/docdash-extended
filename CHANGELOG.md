@@ -1,3 +1,6 @@
+## Version 2.0.0
+* [feature] BREAKING: updated the system to work with JSdoc 4.x
+
 ## Version 1.2.0
 
 * [feature] host fonts locally
