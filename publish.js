@@ -409,7 +409,12 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
         });
 
         if (itemsNav !== '') {
-            nav += '<h3>' + itemHeading + '</h3><ul>' + itemsNav + '</ul>';
+            if(docdash.collapse === "top") {
+                nav += '<h3 class="collapsed_header">' + itemHeading + '</h3><ul class="collapse_top">' + itemsNav + '</ul>';
+            }
+            else {
+                nav += '<h3>' + itemHeading + '</h3><ul>' + itemsNav + '</ul>';
+            }
         }
     }
 
@@ -485,7 +490,12 @@ function buildNav(members) {
             nav += '<h3>' + linkto('global', 'Global') + '</h3>';
         }
         else {
-            nav += '<h3>Global</h3><ul>' + globalNav + '</ul>';
+            if(docdash.collapse === "top") {
+                nav += '<h3 class="collapsed_header">Global</h3><ul class="collapse_top">' + globalNav + '</ul>';
+            }
+            else {
+                nav += '<h3>Global</h3><ul>' + globalNav + '</ul>';
+            }
         }
     }
 

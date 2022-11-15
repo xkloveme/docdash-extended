@@ -242,6 +242,10 @@ nav h3 {
   color: #000;
 }
 
+nav h3.collapsed_header {
+  cursor: pointer;
+}
+
 nav ul {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', arial, sans-serif;
   font-size: 100%;
