@@ -103,7 +103,7 @@ Docdash supports the following options:
         },
         "search": [false|true],         // Display seach box above navigation which allows to search/filter navigation items
         "commonNav": [false|true],      // Group all html code for <nav> in a nav.inc.html fetched on each page (instead of include it in each html page, save {navSize}×{nb html pages} which can be huge on big project)
-        "collapse": [false|true],       // Collapse navigation by default except current object's navigation of the current page
+        "collapse": [false|true|top],   // Collapse navigation by default except current object's navigation of the current page, top for top level collapse
         "wrap": [false|true],           // Wrap long navigation names instead of trimming them
         "typedefs": [false|true],       // Include typedefs in menu
         "navLevel": [integer],          // depth level to show in navbar, starting at 0 (false or -1 to disable)
