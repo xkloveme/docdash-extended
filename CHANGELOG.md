@@ -1,9 +1,14 @@
 ## Version 2.0.0
 * [feature] BREAKING: updated the system to work with JSdoc 4.x https://github.com/clenemt/docdash/pull/110
+* [feature] Added custom classes to h5 headers for customization
+* [feature] Added Global into section order
 * [feature] Added possibility to exclude package scope/name and version from output path https://github.com/clenemt/docdash/pull/78
+* [feature] Added type signature specific classes for CSS customization
 * [feature] Adjusted layout for namespace https://github.com/clenemt/docdash/pull/86
-* [feature] Commong Navigation HTML generated https://github.com/clenemt/docdash/pull/95
+* [feature] Common Navigation HTML generated https://github.com/clenemt/docdash/pull/95
+* [feature] Collapsible top level menu
 * [feature] Shorten types https://github.com/clenemt/docdash/pull/104
+* [feature] Update CSS for <pre> https://github.com/clenemt/docdash/pull/103
 * [fix] Added double quotes to README for consistency https://github.com/clenemt/docdash/pull/96
 * [fix] Fixed extra scroll bar on large code blocks https://github.com/clenemt/docdash/pull/99
 * [fix] Fixed regular expression in README.md https://github.com/clenemt/docdash/pull/81
