@@ -1,24 +1,31 @@
 ## Version 2.0.0
-* [feature] BREAKING: updated the system to work with JSdoc 4.x
+* [feature] BREAKING: updated the system to work with JSdoc 4.x https://github.com/clenemt/docdash/pull/110
+* [feature] Added possibility to exclude package scope/name and version from output path https://github.com/clenemt/docdash/pull/78
+* [feature] Adjusted layout for namespace https://github.com/clenemt/docdash/pull/86
+* [feature] Commong Navigation HTML generated https://github.com/clenemt/docdash/pull/95
+* [feature] Shorten types https://github.com/clenemt/docdash/pull/104
+* [fix] Added double quotes to README for consistency https://github.com/clenemt/docdash/pull/96
+* [fix] Fixed extra scroll bar on large code blocks https://github.com/clenemt/docdash/pull/99
+* [fix] Fixed regular expression in README.md https://github.com/clenemt/docdash/pull/81
 
 ## Version 1.2.0
 
-* [feature] host fonts locally
-* [feature] separate styles for headers inside user markdown
-* [feature] hide static/private method depending of the config
+* [feature] host fonts locally https://github.com/clenemt/docdash/pull/63
+* [feature] separate styles for headers inside user markdown https://github.com/clenemt/docdash/pull/64
+* [feature] hide static/private method depending of the config https://github.com/clenemt/docdash/pull/72
 * [fix] fix empty source code lines in some browsers
-* [fix] improved viewing theme on smaller screens
+* [fix] improved viewing theme on smaller screens https://github.com/clenemt/docdash/pull/62
 
 ## Version 1.1.1
 
-* [feature] scroll to currently opened method on page load
+* [feature] scroll to currently opened method on page load https://github.com/clenemt/docdash/pull/60
 * [fix] fixed searching in IE11
 * [fix] hiding/showing find exact match to open only single relevant section
 
 ## Version 1.1.0
 
-* [scripts] remove jQuery as dependency
-* [feature] allow aliasing event names
+* [scripts] remove jQuery as dependency https://github.com/clenemt/docdash/pull/54
+* [feature] allow aliasing event names https://github.com/clenemt/docdash/pull/59
 
 ## Version 1.0.3
 
