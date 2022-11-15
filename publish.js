@@ -463,8 +463,36 @@ function buildNav(members) {
             nav += '>' + menu + '</a></h2>';
         }
     }
+
+    function buildMemberNavGlobal() {
+        var ret = "";
+        if (members.globals.length) {
+            var globalNav = '';
+    
+            members.globals.forEach(function(g) {
+                if ( (docdash.typedefs || g.kind !== 'typedef') && !hasOwnProp.call(seen, g.longname) ) {
+                    globalNav += '<li>' + linkto(g.longname, g.name) + '</li>';
+                }
+                seen[g.longname] = true;
+            });
+    
+            if (!globalNav) {
+                // turn the heading into a link so you can actually get to the global page
+                ret += '<h3>' + linkto('global', 'Global') + '</h3>';
+            }
+            else {
+                if(docdash.collapse === "top") {
+                    ret += '<h3 class="collapsed_header">Global</h3><ul class="collapse_top">' + globalNav + '</ul>';
+                }
+                else {
+                    ret += '<h3>Global</h3><ul>' + globalNav + '</ul>';
+                }
+            }
+        }
+        return ret;
+    }
     var defaultOrder = [
-        'Classes', 'Modules', 'Externals', 'Events', 'Namespaces', 'Mixins', 'Tutorials', 'Interfaces'
+        'Classes', 'Modules', 'Externals', 'Events', 'Namespaces', 'Mixins', 'Tutorials', 'Interfaces', 'Global'
     ];
     var order = docdash.sectionOrder || defaultOrder;
     var sections = {
@@ -476,32 +504,9 @@ function buildNav(members) {
         Mixins: buildMemberNav(members.mixins, 'Mixins', seen, linkto),
         Tutorials: buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial),
         Interfaces: buildMemberNav(members.interfaces, 'Interfaces', seen, linkto),
+        Global: buildMemberNavGlobal()
     };
     order.forEach(member => nav += sections[member]);
-
-    if (members.globals.length) {
-        var globalNav = '';
-
-        members.globals.forEach(function(g) {
-            if ( (docdash.typedefs || g.kind !== 'typedef') && !hasOwnProp.call(seen, g.longname) ) {
-                globalNav += '<li>' + linkto(g.longname, g.name) + '</li>';
-            }
-            seen[g.longname] = true;
-        });
-
-        if (!globalNav) {
-            // turn the heading into a link so you can actually get to the global page
-            nav += '<h3>' + linkto('global', 'Global') + '</h3>';
-        }
-        else {
-            if(docdash.collapse === "top") {
-                nav += '<h3 class="collapsed_header">Global</h3><ul class="collapse_top">' + globalNav + '</ul>';
-            }
-            else {
-                nav += '<h3>Global</h3><ul>' + globalNav + '</ul>';
-            }
-        }
-    }
 
     return nav;
 }
