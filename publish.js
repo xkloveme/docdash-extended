@@ -212,8 +212,12 @@ function addSignatureTypes(f) {
 function addAttribs(f) {
     var attribs = helper.getAttribs(f);
     var attribsString = buildAttribsString(attribs);
-
-    f.attribs = util.format('<span class="type-signature">%s</span>', attribsString);
+    if (attribsString && attribsString.length) {
+        f.attribs = util.format('<span class="type-signature type-signature-' + attribsString.replace(/\(/g, '').replace(/\)/g, '').trim() +'">%s</span>', attribsString);
+    }
+    else {
+        f.attribs = util.format('<span class="type-signature">%s</span>', attribsString);
+    }
 }
 
 function shortenPaths(files, commonPrefix) {
