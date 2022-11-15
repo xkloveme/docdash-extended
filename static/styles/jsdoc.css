@@ -162,11 +162,18 @@ h6 {
 }
 
 
-tt, code, kbd, samp {
+tt, code, kbd, samp, pre {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   background: #f4f4f4;
+}
+
+tt, code, kbd, samp{
   padding: 1px 5px;
 }
+
+pre {
+  padding-bottom: 1em;
+}  
 
 .class-description {
   font-size: 130%;
