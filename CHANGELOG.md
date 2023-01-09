@@ -1,3 +1,6 @@
+## Version 2.0.1
+* [fix] Removed old backwards compatability fix to fix in page linking
+
 ## Version 2.0.0
 * [feature] BREAKING: updated the system to work with JSdoc 4.x https://github.com/clenemt/docdash/pull/110
 * [feature] Added custom classes to h5 headers for customization
