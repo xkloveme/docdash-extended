@@ -670,7 +670,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     data().each(function(doclet) {
         var url = helper.createLink(doclet);
         if (docdash.noURLEncode) {
-          url = decodeURI(url);
+            url = decodeURI(url);
         }
         helper.registerLink(doclet.longname, url);
 
