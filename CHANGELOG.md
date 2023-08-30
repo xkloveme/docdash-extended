@@ -1,3 +1,5 @@
+## Version 2.0.2
+* [feature] added noURLEncode option to not url encode links in the menu for unicode texts
 ## Version 2.0.1
 * [fix] Removed old backwards compatability fix to fix in page linking
 
