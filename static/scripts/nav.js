@@ -8,7 +8,7 @@ function initNavigation() {
   const id = hash.substring(1);
 
   setActiveItem(id);
-  setActiveParentItem(id);
+  setActiveParentItem();
   scrollToCurrentItem();
   
   // bind to scroll to set id live
@@ -55,7 +55,7 @@ function initNavigation() {
     item.classList.add('active');
   }
 
-  function setActiveParentItem(id) {
+  function setActiveParentItem() {
     const currentLink = document.querySelector(`a[href='${file}']`);
     if (!currentLink) return;
     const item = currentLink.closest('li');
