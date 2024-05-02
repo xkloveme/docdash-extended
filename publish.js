@@ -9,11 +9,11 @@ var path = require('jsdoc/path');
 var taffy = require('@jsdoc/salty').taffy;
 var template = require('jsdoc/template');
 var util = require('util');
+var categories = require('docdash/categories.js');
 
 var htmlsafe = helper.htmlsafe;
 var linkto = helper.linkto;
 var resolveAuthorLinks = helper.resolveAuthorLinks;
-var scopeToPunc = helper.scopeToPunc;
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
 var data;
@@ -322,9 +322,18 @@ function attachModuleSymbols(doclets, modules) {
     });
 }
 
+function buildCategoriesNav(items, itemsSeen, linktoFn) {
+    var nav = '';
+    for (var [category, members] of Object.entries(items)) {
+        var name = env.conf.categories[category].displayName;
+        nav += buildMemberNav(members, name, itemsSeen, linktoFn);
+    }
+    return nav;
+}
+
 function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
     var nav = '';
-
+    
     if (items && items.length) {
         var itemsNav = '';
         var docdash = env && env.conf && env.conf.docdash || {};
@@ -403,7 +412,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             itemsNav += '</li>';
         });
 
-        if (itemsNav !== '') {
+        if (itemsNav !== '<li></li>') {
             if(docdash.collapse === "top") {
                 nav += '<h3 class="collapsed_header">' + itemHeading + '</h3><ul class="collapse_top">' + itemsNav + '</ul>';
             }
@@ -439,7 +448,7 @@ function linktoExternal(longName, name) {
  * @return {string} The HTML for the navigation sidebar.
  */
 
-function buildNav(members) {
+function buildNav(members, categoriesMembers) {
     var nav = '<h2><a href="index.html">Home</a></h2>';
     var seen = {};
     var seenTutorials = {};
@@ -483,10 +492,11 @@ function buildNav(members) {
         return ret;
     }
     var defaultOrder = [
-        'Classes', 'Modules', 'Externals', 'Events', 'Namespaces', 'Mixins', 'Tutorials', 'Interfaces', 'Global'
+        'Categories', 'Classes', 'Modules', 'Externals', 'Events', 'Namespaces', 'Mixins', 'Tutorials', 'Interfaces', 'Global'
     ];
     var order = docdash.sectionOrder || defaultOrder;
     var sections = {
+        Categories: buildCategoriesNav(categoriesMembers, seen, linkto),
         Classes: buildMemberNav(members.classes, 'Classes', seen, linkto),
         Modules: buildMemberNav(members.modules, 'Modules', {}, linkto),
         Externals: buildMemberNav(members.externals, 'Externals', seen, linktoExternal),
@@ -719,6 +729,10 @@ exports.publish = function(taffyData, opts, tutorials) {
     });
 
     var members = helper.getMembers(data);
+    var categoriesMembers = {};
+    for (var category of env.conf.categoryList) {
+        categoriesMembers[category] = categories.getMembers(data, category);
+    }
     members.tutorials = tutorials.children;
 
     // output pretty-printed source files by default
@@ -735,7 +749,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     view.outputSourceFiles = outputSourceFiles;
 
     // once for all
-    view.nav = buildNav(members);
+    view.nav = buildNav(members, categoriesMembers);
     attachModuleSymbols( find({ longname: {left: 'module:'} }), members.modules );
 
     // generate the pretty-printed source files first so other pages can link to them
