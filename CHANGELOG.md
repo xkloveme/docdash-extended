@@ -1,3 +1,8 @@
+## Version 2.1.0
+* [feature] Added custom category plugin and categories navigation section
+* [feature] Added active navigation (url hash updates on scroll)
+* [fix] Fixed missing navigation items if one of sections omitted and item should be visible in other section
+
 ## Version 2.0.2
 * [feature] added noURLEncode option to not url encode links in the menu for unicode texts
 ## Version 2.0.1
