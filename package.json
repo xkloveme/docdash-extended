@@ -1,7 +1,7 @@
 {
-  "name": "docdash",
-  "version": "2.1.0",
-  "description": "A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami",
+  "name": "docdash-extended",
+  "version": "1.0.0",
+  "description": "JSDoc 4 Docdash template extended with category plugin support",
   "main": "publish.js",
   "scripts": {
     "test": "jsdoc -c fixtures/fixtures.conf.json",
@@ -17,11 +17,13 @@
     "jsdoc": "latest",
     "watch-run": "latest"
   },
-  "author": "Clement Moron <clement.moron@gmail.com>",
+  "author": "Tomasz Kolasa <kolasa.at.work@gmail.com",
   "license": "Apache-2.0",
   "keywords": [
     "jsdoc",
-    "template"
+    "template",
+    "category",
+    "categories"
   ],
   "files": [
     "publish.js",

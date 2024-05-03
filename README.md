@@ -1,5 +1,8 @@
+# Docdash Extended
+Clement Moron excellent Docdash template extended with support for @category plugin and some navigation improvements.
+
 # Docdash
-[![Build Status](https://api.travis-ci.org/clenemt/docdash.png?branch=master)](https://travis-ci.org/clenemt/docdash) [![npm version](https://badge.fury.io/js/docdash.svg)](https://badge.fury.io/js/docdash) [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
+[![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
 
 A clean, responsive documentation template theme for JSDoc 4.
 
@@ -171,7 +174,7 @@ Now you can use @category tag in your docs.
 
 ## Contributors
 
-Thanks to [lodash](https://lodash.com) and [minami](https://github.com/nijikokun/minami).
+Thanks to [docdash](https://github.com/clenemt/docdash), [lodash](https://lodash.com) and [minami](https://github.com/nijikokun/minami).
 
 ## License
 Licensed under the Apache License, version 2.0. (see [Apache-2.0](LICENSE.md)).
