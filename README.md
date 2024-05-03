@@ -16,14 +16,14 @@ See http://clenemt.github.io/docdash/ for a sample demo. :rocket:
 ## Install
 
 ```bash
-$ npm install docdash
+$ npm install docdash-extended
 ```
 
 ## Usage
 Clone repository to your designated `jsdoc` template directory, then:
 
 ```bash
-$ jsdoc entry-file.js -t path/to/docdash
+$ jsdoc entry-file.js -t path/to/docdash-extended
 ```
 
 ## Usage (npm)
@@ -39,7 +39,7 @@ In your `jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "node_modules/docdash"
+  "template": "node_modules/docdash-extended"
 }
 ```
 
@@ -61,7 +61,7 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
         "node_modules/docdash/categories",
     ],
     "opts": {
-        "template": "assets/template/docdash/",
+        "template": "assets/template/docdash-extended/",
         "encoding": "utf8",
         "destination": "docs/",
         "recurse": true,
@@ -145,7 +145,7 @@ Docdash supports custom categories through jsdoc plugin - plugin is available fr
 
 ```json
 "plugins": [
-    "node_modules/docdash/categories",
+    "node_modules/docdash-extended/categories",
 ],
 "categoriesFile": "./categories.json"
 ```

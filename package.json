@@ -1,6 +1,6 @@
 {
   "name": "docdash-extended",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JSDoc 4 Docdash template extended with category plugin support",
   "main": "publish.js",
   "scripts": {
