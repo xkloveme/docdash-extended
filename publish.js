@@ -496,18 +496,18 @@ function buildNav(members, categoriesMembers) {
     ];
     var order = docdash.sectionOrder || defaultOrder;
     var sections = {
-        Categories: buildCategoriesNav(categoriesMembers, seen, linkto),
-        Classes: buildMemberNav(members.classes, 'Classes', seen, linkto),
-        Modules: buildMemberNav(members.modules, 'Modules', {}, linkto),
-        Externals: buildMemberNav(members.externals, 'Externals', seen, linktoExternal),
-        Events: buildMemberNav(members.events, 'Events', seen, linkto),
-        Namespaces: buildMemberNav(members.namespaces, 'Namespaces', seen, linkto),
-        Mixins: buildMemberNav(members.mixins, 'Mixins', seen, linkto),
-        Tutorials: buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial),
-        Interfaces: buildMemberNav(members.interfaces, 'Interfaces', seen, linkto),
-        Global: buildMemberNavGlobal()
+        Categories: () => buildCategoriesNav(categoriesMembers, seen, linkto),
+        Classes: () => buildMemberNav(members.classes, 'Classes', seen, linkto),
+        Modules: () => buildMemberNav(members.modules, 'Modules', {}, linkto),
+        Externals: () => buildMemberNav(members.externals, 'Externals', seen, linktoExternal),
+        Events: () => buildMemberNav(members.events, 'Events', seen, linkto),
+        Namespaces: () => buildMemberNav(members.namespaces, 'Namespaces', seen, linkto),
+        Mixins: () => buildMemberNav(members.mixins, 'Mixins', seen, linkto),
+        Tutorials: () => buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial),
+        Interfaces: () => buildMemberNav(members.interfaces, 'Interfaces', seen, linkto),
+        Global: () => buildMemberNavGlobal()
     };
-    order.forEach(member => nav += sections[member]);
+    order.forEach(section => nav += sections[section]());
 
     return nav;
 }
@@ -730,8 +730,10 @@ exports.publish = function(taffyData, opts, tutorials) {
 
     var members = helper.getMembers(data);
     var categoriesMembers = {};
-    for (var category of env.conf.categoryList) {
-        categoriesMembers[category] = categories.getMembers(data, category);
+    if (env.conf.categoryList) {
+        for (var category of env.conf.categoryList) {
+            categoriesMembers[category] = categories.getMembers(data, category);
+        }
     }
     members.tutorials = tutorials.children;
 
