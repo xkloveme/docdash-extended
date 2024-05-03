@@ -54,7 +54,8 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
         "excludePattern": "(node_modules/|docs)"
     },
     "plugins": [
-        "plugins/markdown"
+        "plugins/markdown",
+        "node_modules/docdash/categories",
     ],
     "opts": {
         "template": "assets/template/docdash/",
@@ -66,7 +67,8 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": false
-    }
+    },
+    "categoriesFile": "./categories.json"
 }
 ```
 
@@ -79,6 +81,7 @@ Docdash supports the following options:
         "static": [false|true],         // Display the static members inside the navbar
         "sort": [false|true],           // Sort the methods in the navbar
         "sectionOrder": [               // Order the main section in the navbar (default order shown here)
+             "Categories",
              "Classes",
              "Modules",
              "Externals",
@@ -133,6 +136,38 @@ Docdash supports the following options:
 ```
 
 Place them anywhere inside your `jsdoc.json` file.
+
+## Categories
+Docdash supports custom categories through jsdoc plugin - plugin is available from docdash package. To use categories you need to load the plugin in your jsdoc.json and point location of your categories file:
+
+```json
+"plugins": [
+    "node_modules/docdash/categories",
+],
+"categoriesFile": "./categories.json"
+```
+
+Next you need to create your json with your category definitions where key is your category keyword - example categories.json
+```json
+{
+    "model" : {
+        "displayName" : "Models and Collections"
+    },
+    "component" : {
+        "displayName" : "Components"
+    }
+}
+```
+
+Now you can use @category tag in your docs.
+```js
+/**
+ * @category model
+ */
+```
+
+**If you have custom sectionOrder you need to add "Categories".** It is best to add Categories before all other sections because of how Docdash generates navigation elements.
+
 
 ## Contributors
 
