@@ -29,12 +29,12 @@ var self = this;
 <?js= this.partial('details.tmpl', data) ?>
 
 <?js if (data.augments && data.alias && data.alias.indexOf('module:') === 0) { ?>
-<h5 class="h5-extends">Extends:</h5>
+<h5 class="h5-extends">扩展：</h5>
 <?js= self.partial('augments.tmpl', data) ?>
 <?js } ?>
 
 <?js if (kind === 'event' && data.type && data.type.names) {?>
-<h5 class="h5-types">Type:</h5>
+<h5 class="h5-types">类型：</h5>
 <ul>
     <li>
         <?js= self.partial('type.tmpl', data.type.names) ?>
@@ -43,7 +43,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data['this']) { ?>
-<h5 class="h5-this">This:</h5>
+<h5 class="h5-this">这个：</h5>
 <ul>
     <li><?js= this.linkto(data['this'], data['this']) ?></li>
 </ul>
@@ -51,19 +51,19 @@ var self = this;
 
 <?js if (data.examples && examples.length) { ?>
 <h5 class="h5-examples">
-    Example<?js= examples.length >
+    举例：<?js= examples.length >
     1? 's':'' ?>
 </h5>
 <?js= this.partial('examples.tmpl', examples) ?>
 <?js } ?>
 
 <?js if (data.params && params.length) { ?>
-<h5 class="h5-parameters">Parameters:</h5>
+<h5 class="h5-parameters">参数：</h5>
 <?js= this.partial('params.tmpl', params) ?>
 <?js } ?>
 
 <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
-<h5 class="h5-requires">Requires:</h5>
+<h5 class="h5-requires">必须：</h5>
 <ul>
     <?js data.requires.forEach(function(r) { ?>
     <li><?js= self.linkto(r) ?></li>
@@ -72,7 +72,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.fires && fires.length) { ?>
-<h5 class="h5-fires">Fires:</h5>
+<h5 class="h5-fires">触发：</h5>
 <ul>
     <?js fires.forEach(function(f) { ?>
     <li><?js= self.linkto(f) ?></li>
@@ -81,7 +81,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.listens && listens.length) { ?>
-<h5 class="h5-listens">Listens to Events:</h5>
+<h5 class="h5-listens">监听事件：</h5>
 <ul>
     <?js listens.forEach(function(f) { ?>
     <li><?js= self.linkto(f) ?></li>
@@ -90,7 +90,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.listeners && listeners.length) { ?>
-<h5 class="h5-listeners">Listeners of This Event:</h5>
+<h5 class="h5-listeners">此事件监听者：</h5>
 <ul>
     <?js listeners.forEach(function(f) { ?>
     <li><?js= self.linkto(f) ?></li>
@@ -99,7 +99,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.modifies && modifies.length) {?>
-<h5 class="h5-modifies">Modifies:</h5>
+<h5 class="h5-modifies">修改：</h5>
 <?js if (modifies.length >
 1) { ?>
 <ul>
@@ -116,7 +116,7 @@ var self = this;
 } } ?>
 
 <?js if (data.exceptions && exceptions.length) { ?>
-<h5 class="h5-throws">Throws:</h5>
+<h5 class="h5-throws">抛出：</h5>
 <?js if (exceptions.length >
 1) { ?>
 <ul>
@@ -133,7 +133,7 @@ var self = this;
 } } ?>
 
 <?js if (data.returns && returns.length) { ?>
-<h5 class="h5-returns">Returns:</h5>
+<h5 class="h5-returns">返回：</h5>
 <?js if (returns.length >
 1) { ?>
 <ul>
@@ -150,7 +150,7 @@ var self = this;
 } } ?>
 
 <?js if (data.yields && yields.length) { ?>
-<h5 class="h5-yields">Yields:</h5>
+<h5 class="h5-yields">生成器：</h5>
 <?js if (yields.length >
 1) { ?>
 <ul>

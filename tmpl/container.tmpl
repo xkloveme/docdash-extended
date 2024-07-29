@@ -79,13 +79,13 @@
         <?js } ?>
 
         <?js if (doc.augments && doc.augments.length) { ?>
-        <h3 class="subsection-title">Extends</h3>
+        <h3 class="subsection-title">扩展</h3>
 
         <?js= self.partial('augments.tmpl', doc) ?>
         <?js } ?>
 
         <?js if (doc.requires && doc.requires.length) { ?>
-        <h3 class="subsection-title">Requires</h3>
+        <h3 class="subsection-title">必须</h3>
 
         <ul>
             <?js doc.requires.forEach(function(r) { ?>
@@ -98,7 +98,7 @@
         var classes = self.find({kind: 'class', memberof: doc.longname});
         if (!isGlobalPage && classes && classes.length) {
     ?>
-        <h3 class="subsection-title">Classes</h3>
+        <h3 class="subsection-title">类</h3>
 
         <dl>
             <?js classes.forEach(function(c) { ?>
@@ -112,7 +112,7 @@
         var interfaces = self.find({kind: 'interface', memberof: doc.longname});
         if (!isGlobalPage && interfaces && interfaces.length) {
     ?>
-        <h3 class="subsection-title">Interfaces</h3>
+        <h3 class="subsection-title">接口</h3>
 
         <dl>
             <?js interfaces.forEach(function(i) { ?>
@@ -126,7 +126,7 @@
         var mixins = self.find({kind: 'mixin', memberof: doc.longname});
         if (!isGlobalPage && mixins && mixins.length) {
     ?>
-        <h3 class="subsection-title">Mixins</h3>
+        <h3 class="subsection-title">混合</h3>
 
         <dl>
             <?js mixins.forEach(function(m) { ?>
@@ -140,7 +140,7 @@
         var namespaces = self.find({kind: 'namespace', memberof: doc.longname});
         if (!isGlobalPage && namespaces && namespaces.length) {
     ?>
-        <h3 class="subsection-title">Namespaces</h3>
+        <h3 class="subsection-title">命名空间</h3>
 
         <dl>
             <?js namespaces.forEach(function(n) { ?>
@@ -161,7 +161,7 @@
         }
         if (members && members.length && members.forEach) {
     ?>
-        <h3 class="subsection-title">Members</h3>
+        <h3 class="subsection-title">成员</h3>
 
         <?js members.forEach(function(p) { ?>
         <?js= self.partial('members.tmpl', p) ?>
@@ -172,7 +172,7 @@
         var methods = self.find({kind: 'function', memberof: isGlobalPage ? {isUndefined: true} : doc.longname});
         if (methods && methods.length && methods.forEach) {
     ?>
-        <h3 class="subsection-title">Methods</h3>
+        <h3 class="subsection-title">方法</h3>
 
         <?js methods.forEach(function(m) { ?>
         <?js= self.partial('method.tmpl', m) ?>
@@ -183,7 +183,7 @@
         var typedefs = self.find({kind: 'typedef', memberof: isGlobalPage ? {isUndefined: true} : doc.longname});
         if (typedefs && typedefs.length && typedefs.forEach) {
     ?>
-        <h3 class="subsection-title">Type Definitions</h3>
+        <h3 class="subsection-title">类型定义</h3>
 
         <?js typedefs.forEach(function(e) {
                 if (e.signature) {
@@ -203,7 +203,7 @@
         var events = self.find({kind: 'event', memberof: isGlobalPage ? {isUndefined: true} : doc.longname});
         if (events && events.length && events.forEach) {
     ?>
-        <h3 class="subsection-title">Events</h3>
+        <h3 class="subsection-title">事件</h3>
 
         <?js events.forEach(function(e) { ?>
         <?js= self.partial('method.tmpl', e) ?>

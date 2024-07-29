@@ -17,7 +17,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.type && data.type.names) {?>
-<h5 class="h5-types">Type:</h5>
+<h5 class="h5-types">类型：</h5>
 <ul>
     <li>
         <?js= self.partial('type.tmpl', data.type.names) ?>
@@ -26,7 +26,7 @@ var self = this;
 <?js } ?>
 
 <?js if (data.fires && fires.length) { ?>
-<h5 class="h5-fires">Fires:</h5>
+<h5 class="h5-fires">触发：</h5>
 <ul>
     <?js fires.forEach(function(f) { ?>
     <li><?js= self.linkto(f) ?></li>
@@ -36,7 +36,7 @@ var self = this;
 
 <?js if (data.examples && examples.length) { ?>
 <h5 class="h5-examples">
-    Example<?js= examples.length >
+    示例：<?js= examples.length >
     1? 's':'' ?>
 </h5>
 <?js= this.partial('examples.tmpl', examples) ?>
