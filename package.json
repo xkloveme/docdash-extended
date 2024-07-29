@@ -1,41 +1,41 @@
 {
-  "name": "docdash-extended",
-  "version": "1.0.2",
-  "description": "JSDoc 4 Docdash template extended with category plugin support",
-  "main": "publish.js",
-  "scripts": {
-    "test": "jsdoc -c fixtures/fixtures.conf.json",
-    "sync": "browser-sync start -s ../fixtures-doc -f ../fixtures-doc --reload-delay 1000 --no-ui --no-notify",
-    "watch": "watch-run -d 1000 -p tmpl/**,static/** \"npm run test\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThomasK0lasa/docdash-extended.git"
-  },
-  "devDependencies": {
-    "browser-sync": "latest",
-    "jsdoc": "latest",
-    "watch-run": "latest"
-  },
-  "author": "Tomasz Kolasa",
-  "license": "Apache-2.0",
-  "keywords": [
-    "jsdoc",
-    "template",
-    "category",
-    "categories"
-  ],
-  "files": [
-    "publish.js",
-    "categories.js",
-    "static",
-    "tmpl"
-  ],
-  "dependencies": {
-    "@jsdoc/salty": "^0.2.1"
-  },
-  "bugs": {
-    "url": "https://github.com/ThomasK0lasa/docdash-extended/issues"
-  },
-  "homepage": "https://github.com/ThomasK0lasa/docdash-extended#readme"
+    "name": "docdash-extended-chensuiyi",
+    "version": "1.0.0",
+    "description": "JSDoc 模板 - 陈随易特制",
+    "main": "publish.js",
+    "scripts": {
+        "test": "jsdoc -c fixtures/fixtures.conf.json",
+        "sync": "browser-sync start -s ../fixtures-doc -f ../fixtures-doc --reload-delay 1000 --no-ui --no-notify",
+        "watch": "watch-run -d 1000 -p tmpl/**,static/** \"npm run test\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chenbimo/docdash-extended.git"
+    },
+    "devDependencies": {
+        "browser-sync": "latest",
+        "jsdoc": "latest",
+        "watch-run": "latest"
+    },
+    "author": "Tomasz Kolasa",
+    "license": "Apache-2.0",
+    "keywords": [
+        "jsdoc",
+        "template",
+        "category",
+        "categories"
+    ],
+    "files": [
+        "publish.js",
+        "categories.js",
+        "static",
+        "tmpl"
+    ],
+    "dependencies": {
+        "@jsdoc/salty": "^0.2.1"
+    },
+    "bugs": {
+        "url": "https://github.com/chenbimo/docdash-extended/issues"
+    },
+    "homepage": "https://github.com/chenbimo/docdash-extended#readme"
 }

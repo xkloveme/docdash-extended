@@ -5,15 +5,13 @@
 <dl>
     <dt>
         <div class="param-desc usertext">
-        <?js= data.description ?>
+            <?js= data.description ?>
         </div>
     </dt>
     <dd></dd>
     <dt>
         <dl class="param-type">
-            <dt>
-                Type
-            </dt>
+            <dt>Type</dt>
             <dd>
                 <?js= this.partial('type.tmpl', data.type.names) ?>
             </dd>
@@ -22,11 +20,11 @@
     <dd></dd>
 </dl>
 <?js } else { ?>
-    <div class="param-desc usertext">
+<div class="param-desc usertext">
     <?js if (data.description) { ?>
-        <?js= data.description ?>
+    <?js= data.description ?>
     <?js } else if (data.type && data.type.names) { ?>
-        <?js= this.partial('type.tmpl', data.type.names) ?>
+    <?js= this.partial('type.tmpl', data.type.names) ?>
     <?js } ?>
-    </div>
+</div>
 <?js } ?>

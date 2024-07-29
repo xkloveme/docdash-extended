@@ -9,18 +9,7 @@
             if (nameArr.length === 2) {
                 resolvedName = name;
             } else {
-                resolvedName = resolvedName.replace(">", "");
-                var longname = name.replace("Array.<","").replace(">", "");
-            }
-        }
-    } else {
-        var resolvedName = name;
-    }
-    var link = self.linkto(name, self.htmlsafe(resolvedName));
-    if (longname) {
-        link = link.replace(longname, resolvedName);
-    }
-    ?>
+                resolvedName = resolvedName.replace(">", ""); var longname = name.replace("Array.<","").replace(">", ""); } } } else { var resolvedName = name; } var link = self.linkto(name, self.htmlsafe(resolvedName)); if (longname) { link = link.replace(longname, resolvedName); } ?>
 <span class="param-type"><?js= link?></span>
 <?js if (i < data.length-1) { ?>|<?js } ?>
 <?js }); ?>

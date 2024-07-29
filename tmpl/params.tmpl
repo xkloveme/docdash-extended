@@ -13,12 +13,12 @@
         if (parentParam && parentParam.name && param.name) {
             try {
                 paramRegExp = new RegExp('^(?:' + parentParam.name + '(?:\\[\\])*)\\.(.+)$');
-            }		
-            catch (e) {		
+            }
+            catch (e) {
                 console.error("Problem parsing comment", e);
-                // there's probably a typo in the JSDoc comment that resulted in a weird		
-                // parameter name		
-                return;		
+                // there's probably a typo in the JSDoc comment that resulted in a weird
+                // parameter name
+                return;
             }
 
             if ( paramRegExp.test(param.name) ) {
@@ -60,27 +60,27 @@
 
 <table class="params">
     <thead>
-    <tr>
-        <?js if (params.hasName) {?>
-        <th>Name</th>
-        <?js } ?>
+        <tr>
+            <?js if (params.hasName) {?>
+            <th>Name</th>
+            <?js } ?>
 
-        <th>Type</th>
+            <th>Type</th>
 
-        <?js if (params.hasAttributes) {?>
-        <th>Attributes</th>
-        <?js } ?>
+            <?js if (params.hasAttributes) {?>
+            <th>Attributes</th>
+            <?js } ?>
 
-        <?js if (params.hasDefault) {?>
-        <th>Default</th>
-        <?js } ?>
+            <?js if (params.hasDefault) {?>
+            <th>Default</th>
+            <?js } ?>
 
-        <th class="last">Description</th>
-    </tr>
+            <th class="last">Description</th>
+        </tr>
     </thead>
 
     <tbody>
-    <?js
+        <?js
         var self = this;
         params.forEach(function(param) {
             if (!param) { return; }
@@ -88,45 +88,49 @@
 
         <tr>
             <?js if (params.hasName) {?>
-                <td class="name"><code><?js= param.name ?></code></td>
+            <td class="name">
+                <code><?js= param.name ?></code>
+            </td>
             <?js } ?>
 
             <td class="type">
-            <?js if (param.type && param.type.names) {?>
+                <?js if (param.type && param.type.names) {?>
                 <?js= self.partial('type.tmpl', param.type.names) ?>
-            <?js } ?>
+                <?js } ?>
             </td>
 
             <?js if (params.hasAttributes) {?>
-                <td class="attributes">
+            <td class="attributes">
                 <?js if (param.optional) { ?>
-                    &lt;optional><br>
+                &lt;optional><br />
                 <?js } ?>
 
                 <?js if (param.nullable) { ?>
-                    &lt;nullable><br>
+                &lt;nullable><br />
                 <?js } ?>
 
                 <?js if (param.variable) { ?>
-                    &lt;repeatable><br>
+                &lt;repeatable><br />
                 <?js } ?>
-                </td>
+            </td>
             <?js } ?>
 
             <?js if (params.hasDefault) {?>
-                <td class="default">
+            <td class="default">
                 <?js if (typeof param.defaultvalue !== 'undefined') { ?>
-                    <code><?js= self.htmlsafe(param.defaultvalue) ?></code>
+                <code><?js= self.htmlsafe(param.defaultvalue) ?></code>
                 <?js } ?>
-                </td>
+            </td>
             <?js } ?>
 
-            <td class="description last"><?js= param.description ?><?js if (param.subparams) { ?>
+            <td class="description last">
+                <?js= param.description ?><?js if (param.subparams) { ?>
                 <h6>Properties</h6>
                 <?js= self.partial('params.tmpl', param.subparams) ?>
-            <?js } ?></td>
+                <?js } ?>
+            </td>
         </tr>
 
-    <?js }); ?>
+        <?js }); ?>
     </tbody>
 </table>

@@ -6,7 +6,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ] && 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo 'Setting up the script...'
+echo '正在设置脚本...'
 # Exit with nonzero exit code if anything fails
 set -e
 
@@ -34,7 +34,7 @@ echo "" > .nojekyll
 
 ################################################################################
 ##### Generate JSDOC documents.          #####
-echo 'Copying generated JSDoc code documentation...'
+echo '复制生成的 JSDoc 代码文档...'
 cp -R ../fixtures-doc/* ./ ;
 
 ################################################################################
@@ -60,8 +60,8 @@ if [ -f "index.html" ]; then
     git push --force "https://${GH_REPO_TOKEN}@github.com/${TRAVIS_REPO_SLUG}" > /dev/null 2>&1
 else
     echo '' >&2
-    echo 'Warning: No documentation (html) files have been found!' >&2
-    echo 'Warning: Not going to push the documentation to GitHub!' >&2
+    echo '警告：未找到文档（html）文件！' >&2
+    echo '警告：不会将文档推送到 GitHub！' >&2
     exit 1
 fi
 
