@@ -9,7 +9,7 @@ var path = require('jsdoc/path');
 var taffy = require('@jsdoc/salty').taffy;
 var template = require('jsdoc/template');
 var util = require('util');
-var categories = require('docdash-extended/categories.js');
+var categories = require('docdash-extended-chensuiyi/categories.js');
 
 var htmlsafe = helper.htmlsafe;
 var linkto = helper.linkto;
