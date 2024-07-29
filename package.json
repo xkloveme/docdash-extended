@@ -17,8 +17,13 @@
         "jsdoc": "latest",
         "watch-run": "latest"
     },
-    "author": "Tomasz Kolasa",
+    "author": "chensuiyi",
     "license": "Apache-2.0",
+    "private": false,
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
+    },
     "keywords": [
         "jsdoc",
         "template",
