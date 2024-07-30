@@ -1,7 +1,9 @@
 # Docdash Extended
+
 Clement Moron excellent Docdash template extended with support for @category plugin and some navigation improvements.
 
 # Docdash
+
 [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
 
 A clean, responsive documentation template theme for JSDoc 4.
@@ -11,22 +13,25 @@ A clean, responsive documentation template theme for JSDoc 4.
 ![docdash-screenshot-2](https://cloud.githubusercontent.com/assets/447956/13401057/e30effd8-df0a-11e5-9f51-66257ac38e94.jpg)
 
 ## Example
+
 See http://clenemt.github.io/docdash/ for a sample demo. :rocket:
 
 ## Install
 
 ```bash
-$ npm install docdash-extended
+$ npm install docdash-extended-chensuiyi
 ```
 
 ## Usage
+
 Clone repository to your designated `jsdoc` template directory, then:
 
 ```bash
-$ jsdoc entry-file.js -t path/to/docdash-extended
+$ jsdoc entry-file.js -t path/to/docdash-extended-chensuiyi
 ```
 
 ## Usage (npm)
+
 In your projects `package.json` file add a new script:
 
 ```json
@@ -39,11 +44,12 @@ In your `jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "node_modules/docdash-extended"
+  "template": "node_modules/docdash-extended-chensuiyi"
 }
 ```
 
 ## Sample `jsdoc.json`
+
 See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sample below.
 
 ```json
@@ -56,12 +62,9 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
         "includePattern": "\\.js$",
         "excludePattern": "(node_modules/|docs)"
     },
-    "plugins": [
-        "plugins/markdown",
-        "node_modules/docdash/categories",
-    ],
+    "plugins": ["plugins/markdown", "node_modules/docdash/categories"],
     "opts": {
-        "template": "assets/template/docdash-extended/",
+        "template": "assets/template/docdash-extended-chensuiyi/",
         "encoding": "utf8",
         "destination": "docs/",
         "recurse": true,
@@ -76,6 +79,7 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
 ```
 
 ## Options
+
 Docdash supports the following options:
 
 ```json5
@@ -133,7 +137,7 @@ Docdash supports the following options:
         },
         "scopeInOutputPath": [false|true], // Add scope from package file (if present) to the output path, true by default.
         "nameInOutputPath": [false|true], // Add name from package file to the output path, true by default.
-        "versionInOutputPath": [false|true] // Add package version to the output path, true by default. 
+        "versionInOutputPath": [false|true] // Add package version to the output path, true by default.
     }
 }
 ```
@@ -141,28 +145,31 @@ Docdash supports the following options:
 Place them anywhere inside your `jsdoc.json` file.
 
 ## Categories
+
 Docdash supports custom categories through jsdoc plugin - plugin is available from docdash package. To use categories you need to load the plugin in your jsdoc.json and point location of your categories file:
 
 ```json
 "plugins": [
-    "node_modules/docdash-extended/categories",
+    "node_modules/docdash-extended-chensuiyi/categories",
 ],
 "categoriesFile": "./categories.json"
 ```
 
 Next you need to create your json with your category definitions where key is your category keyword - example categories.json
+
 ```json
 {
-    "model" : {
-        "displayName" : "Models and Collections"
+    "model": {
+        "displayName": "Models and Collections"
     },
-    "component" : {
-        "displayName" : "Components"
+    "component": {
+        "displayName": "Components"
     }
 }
 ```
 
 Now you can use @category tag in your docs.
+
 ```js
 /**
  * @category model
@@ -171,10 +178,10 @@ Now you can use @category tag in your docs.
 
 **If you have custom sectionOrder you need to add "Categories".** It is best to add Categories before all other sections because of how Docdash generates navigation elements.
 
-
 ## Contributors
 
 Thanks to [docdash](https://github.com/clenemt/docdash), [lodash](https://lodash.com) and [minami](https://github.com/nijikokun/minami).
 
 ## License
+
 Licensed under the Apache License, version 2.0. (see [Apache-2.0](LICENSE.md)).
