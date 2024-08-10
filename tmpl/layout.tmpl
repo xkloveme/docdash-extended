@@ -3,7 +3,7 @@
     <head>
         <?js if (!env.conf.docdash) { env.conf.docdash = {};} ?>
         <meta charset="utf-8" />
-        <title>易大师文档</title>
+        <title>小康函数文档</title>
         <?js if (env.conf.docdash.meta) { ?>
         <?js if (env.conf.docdash.meta.description) { ?>
         <meta name="description" content="<?js= env.conf.docdash.meta.description ?>" />
@@ -34,8 +34,22 @@
         <script src="scripts/commonNav.js" defer></script>
         <?js } ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          .back-to-top {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              background-color: #4CAF50;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              display: none;
+            }
+        </style>
     </head>
     <body>
+        <button class="back-to-top" onclick="scrollToTop()">返回顶部🔝</button>
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger" class="navicon-button x">
             <div class="navicon"></div>
@@ -90,7 +104,18 @@
         </footer>
 
         <script>
-            prettyPrint();
+          prettyPrint();
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior:'smooth' });
+          }
+
+          window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+              document.querySelector('.back-to-top').style.display = 'none';
+            }
+          };
         </script>
         <script src="scripts/polyfill.js"></script>
         <script src="scripts/linenumber.js"></script>

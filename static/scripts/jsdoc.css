@@ -22,7 +22,7 @@ img {
 
 a,
 a:active {
-  color: #606;
+  color: rgb(22, 0, 102);
   text-decoration: none;
 }
 
@@ -89,9 +89,9 @@ h4 {
 h4.name {
   color: #fff;
   background: #183f62;
-  box-shadow: 0 .25em .5em #d3d3d3;
-  border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
+  box-shadow: 0 .25em .5em #183f62;
+  border-top: 1px solid #183f62;
+  border-bottom: 1px solid #183f62;
   margin: 1.5em 0 0.5em;
   padding: .75em 0 .75em 10px;
 }
@@ -101,7 +101,7 @@ h4.name a {
 }
 
 h4.name a:hover {
-  border-bottom-color: #9e75f1;
+  border-bottom-color: #5c2dbb;
 }
 
 h5, .container-overview .subsection-title {
@@ -270,7 +270,7 @@ nav ul a:active {
 
 nav a:hover,
 nav a:active {
-  color: #606;
+  color: rgb(31, 0, 102);
 }
 
 nav > ul {
@@ -278,7 +278,7 @@ nav > ul {
 }
 
 nav > ul > li > a {
-  color: #606;
+  color: rgb(7, 0, 102);
   margin-top: 10px;
 }
 
@@ -300,7 +300,7 @@ nav h2 {
 
 nav > h2 > a {
    margin: 10px 0 -10px;
-   color: #606 !important;
+   color: rgb(31, 0, 102) !important;
 }
 
 nav .active {
@@ -535,7 +535,7 @@ thead tr, thead tr {
 }
 
 span.param-type, .params td .param-type, .param-type dd {
-   color: #606;
+   color: rgb(39, 0, 102);
   font-family: Consolas, Monaco, 'Andale Mono', monospace
 }
 

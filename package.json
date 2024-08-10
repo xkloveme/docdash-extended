@@ -1,7 +1,7 @@
 {
-    "name": "docdash-extended-chensuiyi",
-    "version": "1.1.1",
-    "description": "JSDoc 模板 - 陈随易特制",
+    "name": "docdash-extended-xkloveme",
+    "version": "1.0.0",
+    "description": "JSDoc 模板 - 特制",
     "main": "publish.js",
     "scripts": {
         "test": "jsdoc -c fixtures/fixtures.conf.json",
@@ -10,14 +10,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/chenbimo/docdash-extended.git"
+        "url": "git+https://github.com/xkloveme/docdash-extended.git"
     },
     "devDependencies": {
         "browser-sync": "latest",
         "jsdoc": "latest",
         "watch-run": "latest"
     },
-    "author": "chensuiyi",
+    "author": "xkloveme",
     "license": "Apache-2.0",
     "private": false,
     "publishConfig": {
@@ -40,7 +40,7 @@
         "@jsdoc/salty": "^0.2.1"
     },
     "bugs": {
-        "url": "https://github.com/chenbimo/docdash-extended/issues"
+        "url": "https://github.com/xkloveme/docdash-extended/issues"
     },
-    "homepage": "https://github.com/chenbimo/docdash-extended#readme"
+    "homepage": "https://github.com/xkloveme/docdash-extended#readme"
 }

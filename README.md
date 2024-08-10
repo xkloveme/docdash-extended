@@ -19,7 +19,7 @@ See http://clenemt.github.io/docdash/ for a sample demo. :rocket:
 ## Install
 
 ```bash
-$ npm install docdash-extended-chensuiyi
+$ npm install docdash-extended-xkloveme
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ $ npm install docdash-extended-chensuiyi
 Clone repository to your designated `jsdoc` template directory, then:
 
 ```bash
-$ jsdoc entry-file.js -t path/to/docdash-extended-chensuiyi
+$ jsdoc entry-file.js -t path/to/docdash-extended-xkloveme
 ```
 
 ## Usage (npm)
@@ -44,7 +44,7 @@ In your `jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "node_modules/docdash-extended-chensuiyi"
+  "template": "node_modules/docdash-extended-xkloveme"
 }
 ```
 
@@ -64,7 +64,7 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
     },
     "plugins": ["plugins/markdown", "node_modules/docdash/categories"],
     "opts": {
-        "template": "assets/template/docdash-extended-chensuiyi/",
+        "template": "assets/template/docdash-extended-xkloveme/",
         "encoding": "utf8",
         "destination": "docs/",
         "recurse": true,
@@ -150,7 +150,7 @@ Docdash supports custom categories through jsdoc plugin - plugin is available fr
 
 ```json
 "plugins": [
-    "node_modules/docdash-extended-chensuiyi/categories",
+    "node_modules/docdash-extended-xkloveme/categories",
 ],
 "categoriesFile": "./categories.json"
 ```
