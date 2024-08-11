@@ -1,6 +1,6 @@
 {
     "name": "docdash-extended-xkloveme",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "JSDoc 模板 - 特制",
     "main": "publish.js",
     "scripts": {

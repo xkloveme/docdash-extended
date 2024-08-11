@@ -310,7 +310,7 @@ nav .active {
 nav .active:before {
   content: "▶";
   position: absolute;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 15px;
   left: -18px;
 }
