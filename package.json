@@ -1,7 +1,7 @@
 {
     "name": "docdash-extended-xkloveme",
-    "version": "1.0.1",
-    "description": "JSDoc 模板 - 特制",
+    "version": "1.0.2",
+    "description": "JSDoc 模板 -  小康特制",
     "main": "publish.js",
     "scripts": {
         "test": "jsdoc -c fixtures/fixtures.conf.json",
